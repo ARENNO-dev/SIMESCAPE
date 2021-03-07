@@ -23,10 +23,16 @@ public class SpringLandia {
 		int rstEnigmas[] = new int[3];
 		int[] respEnigmas = {15,0,0};
 		
+		int pwdEnigmas=0, pwdEM=0;
+		
+		String[] charadas = {"O que é, o que é? Feito para andar e não anda.","O que é, o que é? Você tira a minha pele. Eu não choro. Você, sim.","O que é, o que é? Quanto mais você tira, maior eu fico."};
+		String rstCharadas[] = new String[3];
+		String[] respCharadas = {"rua","cebola","buraco"};
+		
+		int pwdCH=0, pwdCharadas=0;
+		
 		int qtdeAcertos=0,qtdeErros=0;
 		
-		int pwdEnigmas=0, pwdEM=0;
-
 		/* Logo inicial */        
 		System.out.println(" ad88888ba   88  88b           d88  88888888888   ad88888ba     ,ad8888ba,          db         88888888ba   88888888888");  
 		System.out.println("d8\"     \"8b  88  888b         d888  88           d8\"     \"8b   d8\"'    `\"8b        d88b        88      \"8b  88");           
@@ -60,6 +66,7 @@ public class SpringLandia {
 			System.out.println("Boa sorte " + nome + "! Te encontro no final da história, hum, se você conseguir chegar lá...");
 			
 			System.out.println("");
+			System.out.println("Para você ter uma melhor experiência com o jogo, tente jogar com o TERMINAL maximizado...");
 			System.out.println("Ah, antes de continuar, você pode digitar SAIR nas perguntas para desistir do jogo, tudo bem? Podemos continuar (digite SIM ou NAO)?");
 			init = leitor.next();
 			System.out.println("");
@@ -103,9 +110,33 @@ public class SpringLandia {
 					System.out.println("Qual botão Homerito deve escolher: AZUL ou VERMELHO?");
 					init = leitor.next();
 					
+					System.out.println("");
 					switch(init.toUpperCase()) {
 						case "AZUL":
-							System.out.println("Ao apertar o botão azul, no visor na mesa de controle, esta sendo apresentada a mensagem: Resolva os 3 enigmas matemátciso... ");
+							
+							System.out.println("Ao apertar o botão azul, no visor na mesa de controle, esta sendo apresentada a mensagem:");
+							
+							/* Bender IA SIMESCAPE */
+							System.out.println("             ________________________________________________");
+							System.out.println("            /                                                \\");
+							System.out.println("           |    _________________________________________     |");
+							System.out.println("           |   |                                         |    |");
+							System.out.println("           |   |  Olá eu sou a IA chamada de Bender...   |    |");
+							System.out.println("           |   |  Pelo que estou analisando vc fez m...  |    |");
+							System.out.println("           |   |  Bem isso não é novidade (¬_¬)          |    |");
+							System.out.println("           |   |                                         |    |");
+							System.out.println("           |   |  Ai Ai, bom, vou te ajudar...           |    |");
+							System.out.println("           |   |                                         |    |");
+							System.out.println("           |   |  Para cosnseguirmos sair dessa,         |    |");
+							System.out.println("           |   |  tenta acertar minha proposta abaixo... |    |");
+							System.out.println("           |   |                                         |    |");
+							System.out.println("           |   |  Resolva " + QTDENIGMAS + " enigma(s) matemático...      |    |");
+							System.out.println("           |   |                                         |    |");
+							System.out.println("           |   |  Boa sorte " + nome + "!                        |    |");
+							System.out.println("           |   |_________________________________________|    |");
+							System.out.println("           |                                                  |");
+							System.out.println("            \\_________________________________________________/");
+							System.out.println("                   \\___________________________________/");
 							System.out.println("");
 							
 							for(int i=0;i<QTDENIGMAS;i++) {
@@ -114,9 +145,7 @@ public class SpringLandia {
 							}
 							
 							System.out.println("");
-							System.out.println("Aguarde enquanto valido os resultados...");
-							System.out.println("");
-							
+														
 							for(int i=0;i<QTDENIGMAS;i++) {
 								if(respEnigmas[i]==rstEnigmas[i]) {
 									qtdeAcertos++;
@@ -128,7 +157,7 @@ public class SpringLandia {
 							
 							if(qtdeAcertos == QTDENIGMAS) {
 								System.out.println("Caracas, você acertou todos os enigmas matemáticos... Parabéns =)");
-								System.out.println("Depos de pensar tanto, Homerito, se cansou e quer alucidamente ir para o bar...");
+								System.out.println("Depois de pensar tanto, Homerito, se cansou e quer alucidamente ir para o bar...");
 								System.out.println("Mas para isso, ele precisa informar a senha da sala, por sorte, ele anotou uma dica de senha embaixo do teclado...");
 								System.out.println("Deseja verificar esta dica? (Digite SIM ou NAO)");
 								init = leitor.next();
@@ -160,6 +189,89 @@ public class SpringLandia {
 								
 							break;
 						case "VERMELHO":
+							System.out.println("Doh!  Não sei o que você fez mas parece que a situação piorou =(... No visor da mesa de controle esta apresentando a mensagem: ");
+							
+							/* Bender IA SIMESCAPE */
+							System.out.println("             ________________________________________________");
+							System.out.println("            /                                                \\");
+							System.out.println("           |    _________________________________________     |");
+							System.out.println("           |   |                                         |    |");
+							System.out.println("           |   |  Olá eu sou a IA chamada de Bender...   |    |");
+							System.out.println("           |   |  Pelo que estou analisando vc fez m...  |    |");
+							System.out.println("           |   |  Bem isso não é novidade (¬_¬)          |    |");
+							System.out.println("           |   |                                         |    |");
+							System.out.println("           |   |  Ai Ai, bom, vou te ajudar...           |    |");
+							System.out.println("           |   |                                         |    |");
+							System.out.println("           |   |  Para cosnseguirmos sair dessa,         |    |");
+							System.out.println("           |   |  tenta acertar minha proposta abaixo... |    |");
+							System.out.println("           |   |                                         |    |");
+							System.out.println("           |   |  Resolva " + QTDCHARADAS + " charada(s)...      |    |");
+							System.out.println("           |   |                                         |    |");
+							System.out.println("           |   |  Boa sorte " + nome + "!                        |    |");
+							System.out.println("           |   |_________________________________________|    |");
+							System.out.println("           |                                                  |");
+							System.out.println("            \\_________________________________________________/");
+							System.out.println("                   \\___________________________________/");
+							System.out.println("");
+							
+							qtdeAcertos=0;
+							qtdeErros=0;
+							
+							for(int i=0;i<QTDCHARADAS;i++) {
+								System.out.println(charadas[i]);
+								rstCharadas[i]=leitor.next();
+							}
+							
+							System.out.println("");
+														
+							for(int i=0;i<QTDCHARADAS;i++) {
+								if(rstCharadas[i].equalsIgnoreCase(respCharadas[i])) {
+									qtdeAcertos++;
+								}else {
+									qtdeErros++;
+								}
+							}
+							
+							/* r = 7275
+							 * c = 6365
+							 * b = 6275
+							 * t = 19915
+							 */
+							
+							pwdCH = 19915;
+							
+							System.out.println("");
+							
+							if(qtdeAcertos == QTDCHARADAS) {
+								System.out.println("Caracas, você acertou todas as charadas... Parabéns =)");
+								System.out.println("Depois de pensar tanto, Homerito, se cansou e quer alucidamente ir para o bar...");
+								System.out.println("Mas para isso, ele precisa informar a senha da sala, por sorte, ele anotou uma dica de senha embaixo do teclado...");
+								System.out.println("Deseja verificar esta dica? (Digite SIM ou NAO)");
+								init = leitor.next();
+								
+								if(init.equalsIgnoreCase("sim")) {	
+									System.out.println("Transforme essas palavras em hexadecimal, separe os 4 primeiros digitos de cada uma e some tudo no final:");
+									pwdCharadas = leitor.nextInt();
+									
+									if(pwdCharadas==pwdCH) {
+										System.out.println("Parabéns você acertou!!! Você conseguiu finalizar o SIMESCASE...");
+										System.out.println("Obrigado por jogar =)");
+										init = "sair";
+									}else {
+										System.out.println("Eita algo não esta certo com a sua conta");
+										init = "sair";
+									}								
+																		
+								}else {
+									System.out.println("Que pena que voce desistiu, estavámos quase escapando... :(");
+									init = "sair";
+								}
+									
+							}else {
+								System.out.println("Eita, você não acertou todos os enigmas. Seu resultado foi " + qtdeAcertos + " acerto(s) e " + qtdeErros + " erro(s)");
+								System.out.println("Infelizmente o gás tóxico se espalhou por toda Springlandia =(... GAME__OVER");
+								init = "sair";
+							}
 							
 							break;
 						default:
@@ -181,11 +293,7 @@ public class SpringLandia {
 			}
 	
 		}
-		
-		if(init.equalsIgnoreCase("sair")) {
-			System.out.println("Obrigado por jogar SIMESCASE!");
-		}
-		
+				
 		/* Limpando a memoria */
 		leitor.close();		
 	}
