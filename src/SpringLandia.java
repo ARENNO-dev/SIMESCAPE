@@ -8,12 +8,18 @@ import java.util.Scanner;
  */
 
 public class SpringLandia {
+	
+	public static final int QTDENIGMAS = 3;
+	public static final int QTDCHARADAS = 3;
+	public static final int QTDMAGICA = 1;
+	
 
 	public static void main(String[] args) {
 		
 		Scanner leitor = new Scanner(System.in);
-		String msgs;
-		
+		String init, nome;
+		int engimas, charadas, magica;
+
 		/* Logo inicial */        
 		System.out.println(" ad88888ba   88  88b           d88  88888888888   ad88888ba     ,ad8888ba,          db         88888888ba   88888888888");  
 		System.out.println("d8\"     \"8b  88  888b         d888  88           d8\"     \"8b   d8\"'    `\"8b        d88b        88      \"8b  88");           
@@ -27,20 +33,47 @@ public class SpringLandia {
 		/* Mensagens inicias sobre desenvolvedor e objetivo */
 		System.out.println("");
 		System.out.println("Um jogo baseado em \"Os Simpsons\" desenvolvido por AReno.");
-		System.out.println("O objetivo desse jogo é resolver os engimas matematicos, charadas ou mágica de acordo com caminho seguido pelo jogador.");
+		System.out.println("O objetivo desse jogo é resolver os engimas matematicos, charadas ou mágica de acordo com caminho escolhido pelo jogador.");
 		System.out.println("Se todas as etapas forem concluidas com sucesso será liberada a recompensa para o personagem.");
 		System.out.println("");
 		
 		/* Inicio do jogo */
-		System.out.println("Vamos começar (Digite LETSGO para começar ou SAIR para encerrar o jogo)?");
-		msgs = leitor.next();
+		System.out.println("Vamos começar (Digite LETSGO para começar ou SAIR encerrar o jogo)?");
+		init = leitor.next();
+		System.out.println("");
 		
-		if(msgs.equalsIgnoreCase("LETSGO")) {
+		while(!init.equalsIgnoreCase("sair")) {
+			/* Dados cadastrais iniciais */
+			System.out.println("Antes de começar, preciso te conhecer melhor. Por isso me fale o seu 1º nome:");
+			nome = leitor.next();
 			
-		}else {
-			System.out.println("Obrigado por jogar SIMESCAPE!");
+			System.out.println("");
+			System.out.println("Olá, " + nome + " você está pronto para ganhar este game? =)");
+			System.out.println("Bom " + nome + " nesse jogo você irá controlar as ações do personagem HOMERITO!");
+			System.out.println("Boa sorte " + nome + "! Te encontro no final da história, hum, se você conseguir chegar lá...");
+			
+			System.out.println("");
+			System.out.println("Ah, antes de continuar, você pode digitar SAIR nas perguntas para desistir do jogo, tudo bem? Podemos continuar (digite SIM ou NAO)?");
+			init = leitor.next();
+			System.out.println("");
+			
+			if(init.equalsIgnoreCase("sim")) {			
+				/* Introdução do dia do personagem */
+				System.out.println("Bem vindo, " + nome + " a Springlandia. Homerito está em mais um dia de trabalho na Usina Nuclear, como sempre ele encontra-se em sua mesa de controle do refrigeramento do gás tóxico..." );
+				System.out.println("Escolha o que Homerito deve fazer nesse momento, trabalhar ou fugir?");
+				init = leitor.next();
+			}else {
+				System.out.println("Eita, acho que você teve algum problema e desistiu =(. Obrigado por jogar SIMESCAPE!");
+				init = "sair";
+			}
+
+			
+						
+			
 		}
 		
+		
+		/* Limpando a memoria */
 		leitor.close();		
 	}
 
