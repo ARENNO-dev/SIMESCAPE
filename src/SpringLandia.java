@@ -57,6 +57,33 @@ public class SpringLandia {
 			init = leitor.next();
 			System.out.println("");
 			
+			/* Homerito ASCII art */
+			System.out.println("                                 __");
+			System.out.println("                       _ ,___,-'\",-=-.");
+			System.out.println("           __,-- _ _,-'_)_  (\"\"`'-._\\ `.");
+			System.out.println("        _,'  __ |,' ,-' __)  ,-     /. |");
+			System.out.println("      ,'_,--'   |     -'  _)/         `\\");
+			System.out.println("    ,','      ,'       ,-'_,`           :");
+			System.out.println("    ,'     ,-'       ,(,-(              :");
+			System.out.println("         ,'       ,-' ,    _            ;");
+			System.out.println("        /        ,-._/`---'            /");
+			System.out.println("       /        (____)(----. )       ,'");
+			System.out.println("      /         (      `.__,     /\\ /,");
+			System.out.println("     :           ;-.___         /__\\/|");
+			System.out.println("     |         ,'      `--.      -,\\ |");
+			System.out.println("     :        /            \\    .__/");
+			System.out.println("      \\      (__            \\    |_");
+			System.out.println("       \\       ,`-, *       /   _|,\\");
+			System.out.println("        \\    ,'   `-.     ,'_,-'    \\");
+			System.out.println("       (_\\,-'    ,'\\\")--,'-'       __\\");
+			System.out.println("        \\       /  // ,'|      ,--'  `-.");
+			System.out.println("         `-.    `-/ \'  |   _,'         `.");
+			System.out.println("            `-._ /      `--'/             \\");
+			System.out.println("               ,'           |              \\");
+			System.out.println("              /             |               \\");
+			System.out.println("           ,-'              |               /");
+			System.out.println("          /                 |             -'");
+			
 			if(init.equalsIgnoreCase("sim")) {			
 				/* Introdução do dia do personagem */
 				System.out.println("Bem vindo, " + nome + " a Springlandia. Homerito está em mais um dia de trabalho na Usina Nuclear, como sempre ele encontra-se em sua mesa de controle do refrigeramento do gás tóxico..." );
@@ -66,12 +93,12 @@ public class SpringLandia {
 				System.out.println("Eita, acho que você teve algum problema e desistiu =(. Obrigado por jogar SIMESCAPE!");
 				init = "sair";
 			}
-
-			
-						
-			
+	
 		}
 		
+		if(init.equalsIgnoreCase("sair")) {
+			System.out.println("Obrigado por jogar SIMESCASE!");
+		}
 		
 		/* Limpando a memoria */
 		leitor.close();		
