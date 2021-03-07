@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class SpringLandia {
 	
-	public static final int QTDENIGMAS = 3;
+	public static final int QTDENIGMAS = 1;
 	public static final int QTDCHARADAS = 3;
 	public static final int QTDMAGICA = 1;
 	
@@ -18,7 +18,14 @@ public class SpringLandia {
 		
 		Scanner leitor = new Scanner(System.in);
 		String init, nome;
-		int engimas, charadas, magica;
+		
+		String[] enigmas = {"Qual é o próximo número da sequência 0, 0, 1, 3, 2, 6, 3, 9, 4, 12, 5, ?","",""};
+		int rstEnigmas[] = new int[3];
+		int[] respEnigmas = {15,0,0};
+		
+		int qtdeAcertos=0,qtdeErros=0;
+		
+		int pwdEnigmas=0, pwdEM=0;
 
 		/* Logo inicial */        
 		System.out.println(" ad88888ba   88  88b           d88  88888888888   ad88888ba     ,ad8888ba,          db         88888888ba   88888888888");  
@@ -89,6 +96,85 @@ public class SpringLandia {
 				System.out.println("Bem vindo, " + nome + " a Springlandia. Homerito está em mais um dia de trabalho na Usina Nuclear, como sempre ele encontra-se em sua mesa de controle do refrigeramento do gás tóxico..." );
 				System.out.println("Escolha o que Homerito deve fazer nesse momento, trabalhar ou fugir?");
 				init = leitor.next();
+				
+				if(init.equalsIgnoreCase("trabalhar")) {
+					System.out.println("Ao passar um tempo Homerito, começou a cochilar em sua cadeira. Para piorar com os pés em cima da mesa de controle...");
+					System.out.println("Ao fazer um movimento brusco, disparou um alarme. Homerito acorda desesperado e sem saber o que fazer, olha para mesa e encontra dois botões...");
+					System.out.println("Qual botão Homerito deve escolher: AZUL ou VERMELHO?");
+					init = leitor.next();
+					
+					switch(init.toUpperCase()) {
+						case "AZUL":
+							System.out.println("Ao apertar o botão azul, no visor na mesa de controle, esta sendo apresentada a mensagem: Resolva os 3 enigmas matemátciso... ");
+							System.out.println("");
+							
+							for(int i=0;i<QTDENIGMAS;i++) {
+								System.out.println(enigmas[i]);
+								rstEnigmas[i]=leitor.nextInt();
+							}
+							
+							System.out.println("");
+							System.out.println("Aguarde enquanto valido os resultados...");
+							System.out.println("");
+							
+							for(int i=0;i<QTDENIGMAS;i++) {
+								if(respEnigmas[i]==rstEnigmas[i]) {
+									qtdeAcertos++;
+									pwdEM+=respEnigmas[i];
+								}else {
+									qtdeErros++;
+								}
+							}
+							
+							if(qtdeAcertos == QTDENIGMAS) {
+								System.out.println("Caracas, você acertou todos os enigmas matemáticos... Parabéns =)");
+								System.out.println("Depos de pensar tanto, Homerito, se cansou e quer alucidamente ir para o bar...");
+								System.out.println("Mas para isso, ele precisa informar a senha da sala, por sorte, ele anotou uma dica de senha embaixo do teclado...");
+								System.out.println("Deseja verificar esta dica? (Digite SIM ou NAO)");
+								init = leitor.next();
+								
+								if(init.equalsIgnoreCase("sim")) {	
+									System.out.println("Junte o(s) resultado(s) do(s) " + QTDENIGMAS + " enigma(s) para escapar do trabalho!");
+									System.out.println("Ufa, agora que você sabe o resultado, por favor, some o(s) resultado(s) e em seguida digite o número: ");
+									pwdEnigmas = leitor.nextInt();
+									
+									if(pwdEnigmas==pwdEM) {
+										System.out.println("Parabéns você acertou!!! Você cosneguiu finalizar o SIMESCASE...");
+										System.out.println("Obrigado por jogar =)");
+										init = "sair";
+									}else {
+										System.out.println("Eita algo não esta certo com a sua conta");
+										init = "sair";
+									}								
+																		
+								}else {
+									System.out.println("Que pena que voce desistiu, estavámos quase escapando... :(");
+									init = "sair";
+								}
+									
+							}else {
+								System.out.println("Eita, você não acertou todos os enigmas. Seu resultado foi " + qtdeAcertos + " acerto(s) e " + qtdeErros + " erro(s)");
+								System.out.println("Infelizmente o gás tóxico se espalhou por toda Springlandia =(... GAME__OVER");
+								init = "sair";
+							}
+								
+							break;
+						case "VERMELHO":
+							
+							break;
+						default:
+							System.out.println("Poxa, você não digitiu um texto válido para continuar =(");
+							init = "sair";
+							break;
+					}
+					
+				}else if(init.equalsIgnoreCase("fugir")) {
+					
+				}else {
+					System.out.println("Poxa, você não digitiu um texto válido para continuar =(");
+					init = "sair";
+				}
+				
 			}else {
 				System.out.println("Eita, acho que você teve algum problema e desistiu =(. Obrigado por jogar SIMESCAPE!");
 				init = "sair";
