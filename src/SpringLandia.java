@@ -176,8 +176,7 @@ public class SpringLandia {
 									pwdEnigmas = leitor.nextInt();
 									
 									if(pwdEnigmas==pwdEM) {
-										System.out.println("Parabéns você acertou!!! Você cosneguiu finalizar o SIMESCASE...");
-										System.out.println("Obrigado por jogar =)");
+										System.out.println("Parabéns você acertou!!! Você cosneguiu finalizar o SIMESCASE... Agora Homerito pode desfrutar da recompensa...");
 										init = "sair";
 										ganhou=true;
 									}else {
@@ -240,13 +239,7 @@ public class SpringLandia {
 									qtdeErros++;
 								}
 							}
-							
-							/* r = 7275
-							 * c = 6365
-							 * b = 6275
-							 * t = 19915
-							 */
-							
+														
 							pwdCH = 19915;
 							
 							System.out.println("");
@@ -263,8 +256,7 @@ public class SpringLandia {
 									pwdCharadas = leitor.nextInt();
 									
 									if(pwdCharadas==pwdCH) {
-										System.out.println("Parabéns você acertou!!! Você conseguiu finalizar o SIMESCASE...");
-										System.out.println("Obrigado por jogar =)");
+										System.out.println("Parabéns você acertou!!! Você conseguiu finalizar o SIMESCASE... Agora Homerito pode desfrutar da recompensa...");
 										init = "sair";
 										ganhou = true;
 									}else {
@@ -339,7 +331,6 @@ public class SpringLandia {
 								
 								if(init.equalsIgnoreCase("sim")) {
 									System.out.println("Sabia que iria acertar =)... Bom " + nome + " vou te liberar da sala. Homerito vai aproveitar a recompensa!!!");
-									System.out.println("Obrigado por jogar SIMESCAPE");
 									ganhou = true;
 									init = "sair";
 								}else {
@@ -417,6 +408,9 @@ public class SpringLandia {
 			System.out.println("                 `-._                         __,-'");
 			System.out.println("                     `---.__            __,--'");
 			System.out.println("                            `----------'");
+			System.out.println("");
+			
+			System.out.println("Obrigado por jogar SIMESCAPE");
 		}
 				
 		/* Limpando a memoria */
