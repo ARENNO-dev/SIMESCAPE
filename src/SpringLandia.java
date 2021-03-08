@@ -17,27 +17,31 @@ public class SpringLandia {
 
 	public static void main(String[] args) {
 		
+		
 		Scanner leitor = new Scanner(System.in);
+		
 		String init, nome;
 		
 		DecimalFormat dec = new DecimalFormat("####,##");
 		
 		String[] enigmas = {"Qual é o próximo número da sequência 0, 0, 1, 3, 2, 6, 3, 9, 4, 12, 5, ?","Qual a resposta? Se 3*3 = 54; 2*5 = 70; 3*2 = 30 então 4*3 = ??","Quantos números inteiros existem de 100 a 200?"};
 		int rstEnigmas[] = new int[3];
-		int[] respEnigmas = {15,84,101};
-		
+		String[] respEnigmas = {"1111","1010100","1100101"};
+			
 		int pwdEnigmas=0, pwdEM=0;
 		
 		String[] charadas = {"O que é, o que é? Feito para andar e não anda.","O que é, o que é? Você tira a minha pele. Eu não choro. Você, sim.","O que é, o que é? Quanto mais você tira, maior eu fico."};
 		String rstCharadas[] = new String[3];
 		String[] respCharadas = {"rua","cebola","buraco"};
 		
-		int pwdCH=0, pwdCharadas=0;
+
+		
+		int pwdCharadas=0;
+		String pwdCH;
 		
 		int qtdeAcertos=0,qtdeErros=0;
 		
-		double magica=0;
-		int magicaDMA[] = new int[6];		
+		double magica=0;		
 		boolean ganhou=false;
 		
 		
@@ -154,12 +158,12 @@ public class SpringLandia {
 								rstEnigmas[i]=leitor.nextInt();
 							}
 							
-							System.out.println("");
-														
+							System.out.println("");							
+							
 							for(int i=0;i<QTDENIGMAS;i++) {
-								if(respEnigmas[i]==rstEnigmas[i]) {
+								if(Integer.parseInt(respEnigmas[i],2)==rstEnigmas[i]) {
 									qtdeAcertos++;
-									pwdEM+=respEnigmas[i];
+									pwdEM+=Integer.parseInt(respEnigmas[i],2);
 								}else {
 									qtdeErros++;
 								}
@@ -242,7 +246,7 @@ public class SpringLandia {
 								}
 							}
 														
-							pwdCH = 19915;
+							pwdCH = "100110111001011";
 							
 							System.out.println("");
 							
@@ -258,7 +262,7 @@ public class SpringLandia {
 									System.out.println("Transforme essas palavras em hexadecimal, separe os 4 primeiros digitos de cada uma e some tudo no final:");
 									pwdCharadas = leitor.nextInt();
 									
-									if(pwdCharadas==pwdCH) {
+									if(pwdCharadas==Integer.parseInt(pwdCH, 2)) {
 										System.out.println("Parabéns você acertou!!! Você conseguiu finalizar o SIMESCASE... Agora Homerito pode desfrutar da recompensa...");
 										init = "sair";
 										ganhou = true;
@@ -298,7 +302,7 @@ public class SpringLandia {
 					System.out.println("           |   |  Como eu adoro mágica, para vc sair,    |    |");
 					System.out.println("           |   |  se eu conseguir adivinhar sua data de  |    |");
 					System.out.println("           |   |  nascimento, vou permitir vc ir...      |    |");
-					System.out.println("           |   |  tenta acertar minha proposta abaixo... |    |");
+					System.out.println("           |   |  Simples assim, sem mistério...		 |    |");
 					System.out.println("           |   |                                         |    |");
 					System.out.println("           |   |  Vamos lá, responda as perguntas...     |    |");
 					System.out.println("           |   |                                         |    |");
