@@ -74,7 +74,7 @@ public class SpringLandia {
 			System.out.println("Boa sorte " + nome + "! Te encontro no final da história, hum, se você conseguir chegar lá...");
 			
 			System.out.println("");
-			System.out.println("Para você ter uma melhor experiência com o jogo, tente jogar com o TERMINAL maximizado...");
+			System.out.println("Para você ter uma melhor experiência com o jogo, tente jogar com o CONSOLE maximizado...");
 			System.out.println("Ah, antes de continuar, você pode digitar SAIR nas perguntas para desistir do jogo, tudo bem? Podemos continuar (digite SIM ou NAO)?");
 			init = leitor.next();
 			System.out.println("");
@@ -171,13 +171,15 @@ public class SpringLandia {
 								System.out.println("Deseja verificar esta dica? (Digite SIM ou NAO)");
 								init = leitor.next();
 								
-								if(init.equalsIgnoreCase("sim")) {	
+								if(init.equalsIgnoreCase("sim")) {
+									System.out.println("");
 									System.out.println("Junte o(s) resultado(s) do(s) " + QTDENIGMAS + " enigma(s) para escapar do trabalho!");
 									System.out.println("Ufa, agora que você sabe o resultado, por favor, some o(s) resultado(s) e em seguida digite o número: ");
 									pwdEnigmas = leitor.nextInt();
 									
 									if(pwdEnigmas==pwdEM) {
-										System.out.println("Parabéns você acertou!!! Você cosneguiu finalizar o SIMESCASE... Agora Homerito pode desfrutar da recompensa...");
+										System.out.println("");
+										System.out.println("Parabéns você acertou!!! Você conseguiu finalizar o SIMESCASE... Agora Homerito pode desfrutar da recompensa...");
 										init = "sair";
 										ganhou=true;
 									}else {
