@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class SpringLandia {
 	
-	public static final int QTDENIGMAS = 1;
+	public static final int QTDENIGMAS = 3;
 	public static final int QTDCHARADAS = 3;
 	public static final int QTDMAGICA = 1;
 	
@@ -20,11 +20,11 @@ public class SpringLandia {
 		Scanner leitor = new Scanner(System.in);
 		String init, nome;
 		
-		DecimalFormat dec = new DecimalFormat("##,##,##");
+		DecimalFormat dec = new DecimalFormat("####,##");
 		
-		String[] enigmas = {"Qual é o próximo número da sequência 0, 0, 1, 3, 2, 6, 3, 9, 4, 12, 5, ?","",""};
+		String[] enigmas = {"Qual é o próximo número da sequência 0, 0, 1, 3, 2, 6, 3, 9, 4, 12, 5, ?","Qual a resposta? Se 3*3 = 54; 2*5 = 70; 3*2 = 30 então 4*3 = ??","Quantos números inteiros existem de 100 a 200?"};
 		int rstEnigmas[] = new int[3];
-		int[] respEnigmas = {15,0,0};
+		int[] respEnigmas = {15,84,101};
 		
 		int pwdEnigmas=0, pwdEM=0;
 		
@@ -37,8 +37,9 @@ public class SpringLandia {
 		int qtdeAcertos=0,qtdeErros=0;
 		
 		double magica=0;
-		
+		int magicaDMA[] = new int[6];		
 		boolean ganhou=false;
+		
 		
 		/* Logo inicial */        
 		System.out.println(" ad88888ba   88  88b           d88  88888888888   ad88888ba     ,ad8888ba,          db         88888888ba   88888888888");  
@@ -327,7 +328,7 @@ public class SpringLandia {
 								magica = leitor.nextDouble();
 								
 								magica -= 250;
-								
+																
 								System.out.println("Bom pelo que eu vi aqui no tarô, este valor " + dec.format(magica) + " te lembra algo (tipo sua data de nascimento)? (Sim ou não) ");
 								init = leitor.next();
 								
