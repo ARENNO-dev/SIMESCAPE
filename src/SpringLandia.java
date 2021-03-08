@@ -109,10 +109,11 @@ public class SpringLandia {
 			if(init.equalsIgnoreCase("sim")) {			
 				/* Introdução do dia do personagem */
 				System.out.println("Bem vindo, " + nome + " a Springlandia. Homerito está em mais um dia de trabalho na Usina Nuclear, como sempre ele encontra-se em sua mesa de controle do refrigeramento do gás tóxico..." );
-				System.out.println("Escolha o que Homerito deve fazer nesse momento, trabalhar ou fugir?");
+				System.out.println("Escolha o que Homerito deve fazer nesse momento, TRABALHAR ou FUGIR?");
 				init = leitor.next();
 				
 				if(init.equalsIgnoreCase("trabalhar")) {
+					System.out.println("");
 					System.out.println("Ao passar um tempo Homerito, começou a cochilar em sua cadeira. Para piorar com os pés em cima da mesa de controle...");
 					System.out.println("Ao fazer um movimento brusco, disparou um alarme. Homerito acorda desesperado e sem saber o que fazer, olha para mesa e encontra dois botões...");
 					System.out.println("Qual botão Homerito deve escolher: AZUL ou VERMELHO?");
@@ -213,7 +214,7 @@ public class SpringLandia {
 							System.out.println("           |   |  Para cosnseguirmos sair dessa,         |    |");
 							System.out.println("           |   |  tenta acertar minha proposta abaixo... |    |");
 							System.out.println("           |   |                                         |    |");
-							System.out.println("           |   |  Resolva " + QTDCHARADAS + " charada(s)...      |    |");
+							System.out.println("           |   |  Resolva " + QTDCHARADAS + " charada(s)...                |    |");
 							System.out.println("           |   |                                         |    |");
 							System.out.println("           |   |  Boa sorte " + nome + "!                        |    |");
 							System.out.println("           |   |_________________________________________|    |");
@@ -229,9 +230,7 @@ public class SpringLandia {
 								System.out.println(charadas[i]);
 								rstCharadas[i]=leitor.next();
 							}
-							
-							System.out.println("");
-														
+																					
 							for(int i=0;i<QTDCHARADAS;i++) {
 								if(rstCharadas[i].equalsIgnoreCase(respCharadas[i])) {
 									qtdeAcertos++;
@@ -251,7 +250,8 @@ public class SpringLandia {
 								System.out.println("Deseja verificar esta dica? (Digite SIM ou NAO)");
 								init = leitor.next();
 								
-								if(init.equalsIgnoreCase("sim")) {	
+								if(init.equalsIgnoreCase("sim")) {
+									System.out.println("");
 									System.out.println("Transforme essas palavras em hexadecimal, separe os 4 primeiros digitos de cada uma e some tudo no final:");
 									pwdCharadas = leitor.nextInt();
 									
