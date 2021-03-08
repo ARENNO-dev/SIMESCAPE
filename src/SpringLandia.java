@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /* 
@@ -19,6 +20,8 @@ public class SpringLandia {
 		Scanner leitor = new Scanner(System.in);
 		String init, nome;
 		
+		DecimalFormat dec = new DecimalFormat("##,##,##");
+		
 		String[] enigmas = {"Qual é o próximo número da sequência 0, 0, 1, 3, 2, 6, 3, 9, 4, 12, 5, ?","",""};
 		int rstEnigmas[] = new int[3];
 		int[] respEnigmas = {15,0,0};
@@ -32,6 +35,8 @@ public class SpringLandia {
 		int pwdCH=0, pwdCharadas=0;
 		
 		int qtdeAcertos=0,qtdeErros=0;
+		
+		double magica=0;
 		
 		/* Logo inicial */        
 		System.out.println(" ad88888ba   88  88b           d88  88888888888   ad88888ba     ,ad8888ba,          db         88888888ba   88888888888");  
@@ -55,11 +60,11 @@ public class SpringLandia {
 		init = leitor.next();
 		System.out.println("");
 		
+		/* Dados cadastrais iniciais */
+		System.out.println("Antes de começar, preciso te conhecer melhor. Por isso me fale o seu 1º nome:");
+		nome = leitor.next();
+		
 		while(!init.equalsIgnoreCase("sair")) {
-			/* Dados cadastrais iniciais */
-			System.out.println("Antes de começar, preciso te conhecer melhor. Por isso me fale o seu 1º nome:");
-			nome = leitor.next();
-			
 			System.out.println("");
 			System.out.println("Olá, " + nome + " você está pronto para ganhar este game? =)");
 			System.out.println("Bom " + nome + " nesse jogo você irá controlar as ações do personagem HOMERITO!");
@@ -281,6 +286,75 @@ public class SpringLandia {
 					}
 					
 				}else if(init.equalsIgnoreCase("fugir")) {
+					/* Bender IA SIMESCAPE */
+					System.out.println("             ________________________________________________");
+					System.out.println("            /                                                \\");
+					System.out.println("           |    _________________________________________     |");
+					System.out.println("           |   |                                         |    |");
+					System.out.println("           |   |  Olá eu sou a IA chamada de Bender...   |    |");
+					System.out.println("           |   |  Então vc não quer trabalhar, certo?... |    |");
+					System.out.println("           |   |  Bem isso não é novidade (¬_¬)          |    |");
+					System.out.println("           |   |                                         |    |");
+					System.out.println("           |   |  Como eu adoro mágica, para vc sair,    |    |");
+					System.out.println("           |   |  se eu conseguir adivinhar sua data de  |    |");
+					System.out.println("           |   |  nascimento, vou permitir vc ir...      |    |");
+					System.out.println("           |   |  tenta acertar minha proposta abaixo... |    |");
+					System.out.println("           |   |                                         |    |");
+					System.out.println("           |   |  Vamos lá, responda as perguntas...     |    |");
+					System.out.println("           |   |                                         |    |");
+					System.out.println("           |   |  Boa sorte " + nome + "!                        |    |");
+					System.out.println("           |   |_________________________________________|    |");
+					System.out.println("           |                                                  |");
+					System.out.println("            \\_________________________________________________/");
+					System.out.println("                   \\___________________________________/");
+					System.out.println("");
+					
+					System.out.println("Bom, acho que é melhor você abrir uma calculadora para ir mais rapido...");
+					System.out.println("");
+					
+					System.out.println("Pense no número do dia e mês do seu aniversário... (Ex: Se eu nasci em 08/JAN, vou pensar em 81). Posso continuar (Sim ou Não)?");
+					init = leitor.next();
+					
+					if(init.equalsIgnoreCase("sim")) {
+						System.out.println("Agora dobre esse número. Com este resultado, some 5. Por enquanto está facil né? Continamos (Sim ou Não)?");
+						init = leitor.next();
+						
+						if(init.equalsIgnoreCase("sim")) {
+							System.out.println("Multiplique o valor por 50. Com o novo valor, some os 2 ultimos número do ano de seu nascimento.  Continamos (Sim ou Não)?");
+							init = leitor.next();
+							
+							if(init.equalsIgnoreCase("sim")) {								
+								System.out.println("Me informe esse número que você obteve após todos estes cálculo. Preciso consulta o tarô para adivinhar sua data de nasicmento, só lembrando que só vou aceitar números...");
+								magica = leitor.nextDouble();
+								
+								magica -= 250;
+								
+								System.out.println("Bom pelo que eu vi aqui no tarô, este valor " + dec.format(magica) + " te lembra algo (tipo sua data de nascimento)? (Sim ou não) ");
+								init = leitor.next();
+								
+								if(init.equalsIgnoreCase("sim")) {
+									System.out.println("Sabia que iria acertar =)... Bom " + nome + " vou te liberar da sala. Homerito vai aproveitar a recompensa!!!");
+									System.out.println("Obrigado por jogar SIMESCAPE");
+									init = "sair";
+								}else {
+									System.out.println("Não é possível que não acertei, você deve ter feito a conta errada =|... Por esse motivo, você vai continuar na sala e recomeçar o jogo!");
+									init = "voltar";
+								}
+								
+							}else {
+								System.out.println("Infelizmente não vou deixar você sair, pois não adivinhei sua data de nascimento...");
+								init  = "sair";
+							}
+							
+						}else {
+							System.out.println("Infelizmente não vou deixar você sair, pois não adivinhei sua data de nascimento...");
+							init  = "sair";
+						}						
+						
+					}else {
+						System.out.println("Infelizmente não vou deixar você sair, pois não adivinhei sua data de nascimento...");
+						init  = "sair";
+					}			
 					
 				}else {
 					System.out.println("Poxa, você não digitiu um texto válido para continuar =(");
