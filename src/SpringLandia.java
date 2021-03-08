@@ -38,6 +38,8 @@ public class SpringLandia {
 		
 		double magica=0;
 		
+		boolean ganhou=false;
+		
 		/* Logo inicial */        
 		System.out.println(" ad88888ba   88  88b           d88  88888888888   ad88888ba     ,ad8888ba,          db         88888888ba   88888888888");  
 		System.out.println("d8\"     \"8b  88  888b         d888  88           d8\"     \"8b   d8\"'    `\"8b        d88b        88      \"8b  88");           
@@ -65,6 +67,7 @@ public class SpringLandia {
 		nome = leitor.next();
 		
 		while(!init.equalsIgnoreCase("sair")) {
+			ganhou = false;
 			System.out.println("");
 			System.out.println("Olá, " + nome + " você está pronto para ganhar este game? =)");
 			System.out.println("Bom " + nome + " nesse jogo você irá controlar as ações do personagem HOMERITO!");
@@ -176,6 +179,7 @@ public class SpringLandia {
 										System.out.println("Parabéns você acertou!!! Você cosneguiu finalizar o SIMESCASE...");
 										System.out.println("Obrigado por jogar =)");
 										init = "sair";
+										ganhou=true;
 									}else {
 										System.out.println("Eita algo não esta certo com a sua conta");
 										init = "sair";
@@ -262,6 +266,7 @@ public class SpringLandia {
 										System.out.println("Parabéns você acertou!!! Você conseguiu finalizar o SIMESCASE...");
 										System.out.println("Obrigado por jogar =)");
 										init = "sair";
+										ganhou = true;
 									}else {
 										System.out.println("Eita algo não esta certo com a sua conta");
 										init = "sair";
@@ -335,6 +340,7 @@ public class SpringLandia {
 								if(init.equalsIgnoreCase("sim")) {
 									System.out.println("Sabia que iria acertar =)... Bom " + nome + " vou te liberar da sala. Homerito vai aproveitar a recompensa!!!");
 									System.out.println("Obrigado por jogar SIMESCAPE");
+									ganhou = true;
 									init = "sair";
 								}else {
 									System.out.println("Não é possível que não acertei, você deve ter feito a conta errada =|... Por esse motivo, você vai continuar na sala e recomeçar o jogo!");
@@ -366,6 +372,51 @@ public class SpringLandia {
 				init = "sair";
 			}
 	
+		}
+		
+		if(ganhou == true) {
+			System.out.println("                       __ __");
+			System.out.println("                      (,-^\\-\\_");
+			System.out.println("                     ,'    \\ \\`-.");
+			System.out.println("                    '            \\");
+			System.out.println("                   |              :");
+			System.out.println("                   |        _     |");
+			System.out.println("                  ,|___   ,' `.   |");
+			System.out.println("                  ,'   ` |     | /\\/\\");
+			System.out.println("                  |     )\\   o // ;-.`                 __");
+			System.out.println("                  `._o,'  ;---:_  __/ ____          ,-'  `--.");
+			System.out.println("                   ,(,`--'      `. \\,'_ __`.     ,-'         `.");
+			System.out.println("                ,-' (        _,'|---`(  \\ \\-\\   /              `.");
+			System.out.println("            _,-|  |  \\    ,-',-'      \\_/_/_/--'._               \\");
+			System.out.println("           ( \\  \\-'   `--^--'    '!..             `.              `");
+			System.out.println("         ,' `-^-'  ..    .         '`!.             \\           _,-\\");
+			System.out.println("       ,'          `!,   !.          `'    ,.....    \\      _,-'_,-`-,---.");
+			System.out.println("      '|            `'   !.     ...           '``!,   \\   ,'   ,'   ,'    \\");
+			System.out.println("     / :     .           !.   .,'''   ,.!'''           \\ /   ,'   ,'      /");
+			System.out.println("    '   :  ,!'     ....  `'  `'     `''        .  ,.... \\   /    /       /");
+			System.out.println("   '    ; ,!'   ,!'''''      ,-----.           `!  ''''  \\ '   ,'.     ,'");
+			System.out.println("  /   ,'  `!              .-'       `--.       ,!         /  ,'   `. ,'");
+			System.out.println(" :   ;         ..         |             `.___  `!     .,..\\ /       ;");
+			System.out.println(" :   ;     ..!'''       ,'                   ``-.     `''  \\     _,'");
+			System.out.println(":   ;     ,''           |     _______            `.         `---'  |");
+			System.out.println(":   :         ...       |  ,-'    ,' `-._         |        ,.    | |");
+			System.out.println(":    \\    ..!''''       |,'     ,'       :-.      |        `!..  | :");
+			System.out.println(":     \\   `'             \\   ,-'         |  \\    ,'    ..    `!. | :");
+			System.out.println(":      :      ,......     `.'            |   \\   |      ``.   `' ; ;");
+			System.out.println(" :     | ,.       ''''      ._           |    \\ /        ;!;    / :");
+			System.out.println(" :     :  !.                  `-._       | _.--'          ''   /  ;");
+			System.out.println("  \\     \\ `!.    ,.!'    ,.....   `------^'        .,..       /  :");
+			System.out.println("   \\     \\ `'   ,''       ''''``.                ,!''''      ;   ;");
+			System.out.println("    \\     \\    `'                       .!'''                ; ,'");
+			System.out.println("     \\     \\          ,.,'            ,!'                   / /");
+			System.out.println("      `.    \\       ,!''    `''`...    '     '!...        ,' /");
+			System.out.println("        \\    \\      '            ''     ....   `''   ,---' ,'");
+			System.out.println("         `.   `.        ,...          .!''''      ,-'    ,'");
+			System.out.println("           `-.  `--.    `''`'''     __;---.    ,-'    _,'");
+			System.out.println("              `-.   `-._____,------'       `--'    _,'");
+			System.out.println("                 `-._                         __,-'");
+			System.out.println("                     `---.__            __,--'");
+			System.out.println("                            `----------'");
 		}
 				
 		/* Limpando a memoria */
